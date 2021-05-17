@@ -56,6 +56,68 @@ burger.onclick = () => {
     menu.classList.toggle('nav__list--open');
 }
 
+// Появление stat__block при скролле
+
+let statBlock = document.querySelectorAll('.stat__block');
+let maxWidth = document.documentElement.clientWidth;
+console.log(maxWidth);
+let k = '';
+
+window.onscroll = function () {
+    console.log(window.pageYOffset);
+    if (maxWidth < 767) {
+        k = 1100;
+        getAnimationStatMobile()
+    }
+
+    else {
+        k = 1600;
+        getAnimationStatDesktop()
+    }
+}
+
+//Desktop
+
+function getAnimationStatDesktop() {
+    if (window.pageYOffset > k) {
+        for (let i = 0; i < statBlock.length; i++) {
+            if (i % 2 == 0) {
+                statBlock[i].classList.add('stat__block--visible1');
+            }
+            else {
+                statBlock[i].classList.add('stat__block--visible2');
+            }
+        }
+    }
+}
+
+//Mobile
+
+function getAnimationStatMobile() {
+    if (window.pageYOffset > k) {
+        for (let i = 0; i < statBlock.length; i++) {
+            if (i % 2 == 0) {
+                statBlock[i].classList.add('stat__block--visible3');
+            }
+            else {
+                statBlock[i].classList.add('stat__block--visible4');
+            }
+        }
+    }
+}
+
+
+// window.onscroll = function () {
+//     console.log(window.pageYOffset);
+//     if (window.pageYOffset > 1600) {
+//         for(let item of statBlock) {
+//             item.classList.add('stat__block--visible1');
+//         }
+//     }
+// }
+
+
+
 
 
 

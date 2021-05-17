@@ -1,6 +1,7 @@
 @import "_variables.scss"; /* Переменные */
 @import "_fonts.scss"; /* Шрифты */
 @import "_global.scss"; /* Глобальные свойства */
+@import "_animations.scss"; /* Анимации */
 
 .container {
     max-width: 1220px;
@@ -369,6 +370,7 @@
 
 .stat-wrapper {
     background-color: #95e1d3;
+    overflow: hidden;
 }
 
 .stat {
@@ -383,10 +385,32 @@
     min-height: 270px;
     padding: 90px 0;
     border-left: 1px solid #b5eae0;
+    opacity: 0;
+}
+
+.stat__block--visible1 {
+    animation: anim1 forwards 0.7s linear;
+}
+
+.stat__block--visible2 {
+    animation: anim2 forwards 0.7s linear;
+}
+
+.stat__block:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.stat__block:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.stat__block:nth-child(4) {
+    animation-delay: 1.5s;
 }
 
 .stat__block:last-child {
     border-right: 1px solid #b5eae0;
+    animation-delay: 2s;
 }
 
 .stat__number {
@@ -1278,6 +1302,14 @@
         border-left: none;
         border-bottom: 1px solid #b5eae0;
         padding: 10px 0;
+    }
+
+    .stat__block--visible3 {
+        animation: anim1-mobile forwards 0.7s linear;
+    }
+    
+    .stat__block--visible4 {
+        animation: anim2-mobile forwards 0.7s linear;
     }
 
     .stat__block:last-child {
