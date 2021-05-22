@@ -301,12 +301,13 @@
 
 .about__pictures {
     display: flex;
-    justify-content: space-between;
-    margin: 0 0 112px 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 0 84px 0;
 }
 
 .link-gradient {
-    margin: 0 28px 0 0;
+    margin: 0 28px 28px 0;
     background-color: #95e1d3;
     min-width: 380px;
     min-height: 250px;
@@ -314,7 +315,7 @@
 }
 
 .link-gradient:last-child {
-    margin: 0;
+    margin: 0 0 28px 0;
 }
 
 .link-gradient__front {
@@ -1013,7 +1014,9 @@
     }
 
     .about__pictures {
+        flex-wrap: nowrap;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         margin: 0 0 60px 0;
     }

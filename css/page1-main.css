@@ -505,14 +505,15 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 0 0 112px 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0 0 84px 0;
 }
 
 .link-gradient {
-  margin: 0 28px 0 0;
+  margin: 0 28px 28px 0;
   background-color: #95e1d3;
   min-width: 380px;
   min-height: 250px;
@@ -520,7 +521,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .link-gradient:last-child {
-  margin: 0;
+  margin: 0 0 28px 0;
 }
 
 .link-gradient__front {
@@ -1365,10 +1366,15 @@ h1, h2, h3, h4, h5, h6 {
     margin: 30px auto 40px auto;
   }
   .about__pictures {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
